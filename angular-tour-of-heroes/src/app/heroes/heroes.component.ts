@@ -15,7 +15,11 @@ export class HeroesComponent {
 
   selectedHero?: Hero;
 onSelect(hero: Hero): void {
-  this.selectedHero = hero;
+  if(hero == this.selectedHero){
+    this.selectedHero = undefined;
+  } else {
+    this.selectedHero = hero;
+  }  
 }
 
 }
