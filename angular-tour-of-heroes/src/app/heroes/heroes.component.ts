@@ -16,15 +16,16 @@ export class HeroesComponent {
   constructor(private heroService: HeroService) {}
 
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes );
   }
 
   //heroes = HEROES;
   heroes: Hero[] = [];
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
+  // hero: Hero = {
+  //   id: 1,
+  //   name: 'Windstorm'
+  // };
 
   selectedHero?: Hero;
 onSelect(hero: Hero): void {
